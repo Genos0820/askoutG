@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=MedievalSharp&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 :root {
-  font-family: "Protest Riot", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "MedievalSharp", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -17,8 +17,55 @@
   -moz-osx-font-smoothing: grayscale;
 }
 body {
-  background: url("./assets/bg1.webp");
-  background-position: center;
-  background-size: cover;
+  min-height: 100vh;
+  color: #f5e6b8;
+  background:
+    radial-gradient(1.5px 1.5px at 20% 30%, #fff, transparent),
+    radial-gradient(1px 1px at 70% 20%, #fff, transparent),
+    radial-gradient(2px 2px at 40% 70%, #ffe9a8, transparent),
+    radial-gradient(1px 1px at 85% 60%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 10% 85%, #fff, transparent),
+    radial-gradient(ellipse at 50% 0%, #2b1a4a 0%, #0d0b1e 70%);
   background-attachment: fixed;
+}
+h1, .hp-title {
+  font-family: "Cinzel Decorative", "MedievalSharp", serif;
+  color: #f0c75e;
+  text-shadow: 0 0 12px rgba(240, 199, 94, 0.55), 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+@keyframes hp-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes hp-flicker {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 8px #ffb347); }
+  50% { opacity: 0.8; filter: drop-shadow(0 0 16px #ffb347); }
+}
+.hp-float { animation: hp-float 4s ease-in-out infinite; }
+.hp-flicker { animation: hp-flicker 1.6s ease-in-out infinite; }
+
+@keyframes hp-rise {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(-110vh) rotate(25deg); opacity: 0; }
+}
+.hp-spark {
+  position: absolute;
+  bottom: -40px;
+  animation: hp-rise linear infinite;
+  filter: drop-shadow(0 0 6px #ffd76a);
+}
+.hp-letter {
+  background: #f3e2b3;
+  background-image: radial-gradient(ellipse at center, #f8ecc6 0%, #e6cf94 100%);
+  border: 3px solid #8a5a1c;
+  border-radius: 6px;
+  box-shadow: 0 0 40px rgba(240, 199, 94, 0.35), inset 0 0 40px rgba(138, 90, 28, 0.35);
+  font-family: "MedievalSharp", serif;
+}
+.hp-letter-title {
+  font-family: "Cinzel Decorative", serif;
+  color: #7a1f1f;
+  text-shadow: none;
 }
