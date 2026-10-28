@@ -88,7 +88,6 @@ export default function Page() {
           </div>
         </>
       )}
-      <Footer />
     </div>
   );
 }
@@ -111,18 +110,3 @@ const Sparkles = () => (
     ))}
   </div>
 );
-
-const Footer = () => {
-  return (
-    <a
-      className="fixed bottom-2 right-2 backdrop-blur-md opacity-80 hover:opacity-95 border p-1 rounded border-yellow-500"
-      href="https://github.com/Genos0820/askoutG"
-      target="__blank"
-    >
-      Made with magic{" "}
-      <span role="img" aria-label="wand and lightning bolt">
-        🪄⚡
-      </span>
-    </a>
-  );
-};
